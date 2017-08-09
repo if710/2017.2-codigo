@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HelloWorld</string>
+    <string name="aula">String criada na aula</string>
+    <string name="btnText">Clique em mim</string>
+</resources>
