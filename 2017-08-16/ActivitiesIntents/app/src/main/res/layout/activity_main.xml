@@ -8,25 +8,21 @@
         android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Estados" />
+        android:text="Explicito - lifecycle" />
     <Button
         android:id="@+id/btn2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lista" />
+        android:text="Implicito Link web" />
     <Button
         android:id="@+id/btn3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pessoas" />
+        android:text="Implicito mapa" />
     <Button
         android:id="@+id/btn4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Custom" />
-    <Button
-        android:id="@+id/btn5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Dispara intent implicito" />
-    </LinearLayout>
+        android:text="Abrir TxtActivity" />
+
+</LinearLayout>

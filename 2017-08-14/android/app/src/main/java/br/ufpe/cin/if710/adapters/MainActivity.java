@@ -45,5 +45,22 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        Button b5 = (Button) findViewById(R.id.btn5);
+        b5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String txt = "o texto que porventura tenha sido digitado...";
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_SEND);
+                //se nao marcar isto aqui, pode dar pau
+                intent.setType("text/plain");
+                //nao influenciam o processo de resolucao
+                intent.putExtra(Intent.EXTRA_SUBJECT, "algum assunto");
+                intent.putExtra(Intent.EXTRA_TEXT, txt);
+
+                startActivity(intent);
+            }
+        });
     }
 }
