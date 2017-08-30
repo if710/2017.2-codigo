@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -15,7 +16,7 @@ public class DownloadActivity extends Activity {
 
     Button botaoDownload;
 
-    public static final String downloadLink = "https://ochamadodaalma.files.wordpress.com/2016/01/furacao.jpg";
+    public static final String downloadLink = "https://cacm.acm.org/system/assets/0002/6368/Moshe_Vardi.large.jpg";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,4 +46,24 @@ public class DownloadActivity extends Activity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        IntentFilter f = new IntentFilter(DownloadService.DOWNLOAD_COMPLETE);
+        LocalBroadcastManager.getInstance(getApplicationContext()).registerReceiver(onDownloadCompleteEvent, f);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LocalBroadcastManager.getInstance(getApplicationContext()).unregisterReceiver(onDownloadCompleteEvent);
+    }
+
+    private BroadcastReceiver onDownloadCompleteEvent=new BroadcastReceiver() {
+        public void onReceive(Context ctxt, Intent i) {
+            botaoDownload.setEnabled(true);
+            Toast.makeText(ctxt, "Download finalizado!", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(ctxt,DownloadViewActivity.class));
+        }
+    };
 }

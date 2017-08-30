@@ -41,5 +41,13 @@ public class MainActivity extends Activity {
                 startActivity(new Intent(getApplicationContext(),DownloadActivity.class));
             }
         });
+
+
+        final Button btn_sendBroadcast = (Button) findViewById(R.id.botao_broadcast);
+        btn_sendBroadcast.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View src) {
+                sendBroadcast(new Intent("br.ufpe.cin.if710.broadcasts.exemplo"));
+            }
+        });
     }
 }

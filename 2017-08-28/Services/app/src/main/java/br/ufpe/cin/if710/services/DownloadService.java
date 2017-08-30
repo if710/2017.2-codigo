@@ -5,6 +5,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.Environment;
 import android.os.IBinder;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
 import java.io.BufferedOutputStream;
@@ -16,6 +17,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class DownloadService extends IntentService {
+
+    public static final String DOWNLOAD_COMPLETE = "br.ufpe.cin.if710.services.action.DOWNLOAD_COMPLETE";
+
 
     public DownloadService() {
         super("DownloadService");
@@ -50,7 +54,8 @@ public class DownloadService extends IntentService {
                 c.disconnect();
             }
 
-            //exibir toast
+            LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(DOWNLOAD_COMPLETE));
+
 
         } catch (IOException e2) {
             Log.e(getClass().getName(), "Exception durante download", e2);

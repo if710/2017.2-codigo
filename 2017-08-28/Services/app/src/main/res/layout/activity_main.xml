@@ -32,4 +32,10 @@
         android:text="Exemplo de IntentService"
         android:textSize="20sp" />
 
+    <Button
+        android:id="@+id/botao_broadcast"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Exemplo de broadcast"
+        android:textSize="20sp" />
 </LinearLayout>
