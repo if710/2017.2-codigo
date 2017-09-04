@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DataManagement</string>
+    <string name="play_string">Jogar</string>
+    <string name="highscore_string">&quot;HighScore: &quot;</string>
+    <string name="reset_string">Resetar</string>
+    <string name="ver_username_string">Alterar Nome de Usuário</string>
+</resources>

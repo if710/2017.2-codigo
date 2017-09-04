@@ -32,8 +32,7 @@ public class DynRecActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dyn_rec);
 
-        boolean receiveSMS = ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS) == PackageManager.PERMISSION_GRANTED;
-        if (receiveSMS) {
+        if (podeSMS()) {
             Button enviarBroadcast = (Button) findViewById(R.id.enviarBroadcastDyn);
             enviarBroadcast.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -48,11 +47,15 @@ public class DynRecActivity extends Activity {
 
     }
 
+    public boolean podeSMS() {
+        return ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS) == PackageManager.PERMISSION_GRANTED;
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch(requestCode) {
             case SMS_REQUEST:
-                if (!(ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS) == PackageManager.PERMISSION_GRANTED)) {
+                if (!podeSMS()) {
                     Toast.makeText(this, "Sem permissão para SMS", Toast.LENGTH_SHORT).show();
                     finish();
                 }
