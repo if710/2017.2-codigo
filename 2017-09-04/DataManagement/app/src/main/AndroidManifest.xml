@@ -22,7 +22,9 @@
         <activity android:name=".SharedPrefsActivity" />
         <activity android:name=".PrefsActivity" />
         <activity android:name=".SQLiteActivity" />
-        <activity android:name=".PrefsMenuActivity"></activity>
+        <activity android:name=".PrefsMenuActivity" />
+        <activity android:name=".AdicionarEstadoActivity" />
+        <activity android:name=".EditarEstadoActivity"></activity>
     </application>
 
 </manifest>

@@ -42,14 +42,13 @@ public class MemoriaExternaActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memoria_externa);
+        Button copiar = (Button) findViewById(R.id.botaoCopiar);
+        Button ler = (Button) findViewById(R.id.botaoLer);
+        Button limpar = (Button) findViewById(R.id.botaoLimpar);
+        Button apagar = (Button) findViewById(R.id.botaoApagar);
+        imagem = (ImageView) findViewById(R.id.imagem);
 
         if (podeEscrever()) {
-            Button copiar = (Button) findViewById(R.id.botaoCopiar);
-            Button ler = (Button) findViewById(R.id.botaoLer);
-            Button limpar = (Button) findViewById(R.id.botaoLimpar);
-            Button apagar = (Button) findViewById(R.id.botaoApagar);
-            imagem = (ImageView) findViewById(R.id.imagem);
-
             copiar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

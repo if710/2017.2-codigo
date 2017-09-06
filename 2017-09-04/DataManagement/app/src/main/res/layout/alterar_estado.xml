@@ -5,14 +5,20 @@
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <EditText
+        android:id="@+id/txtUF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/txtNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <Button
-        android:id="@+id/btnAdicionaEstado"
+        android:id="@+id/btnInserirEstado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btnAddEstado" />
 
-    <ListView
-        android:id="@+id/listaEstados"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
 </LinearLayout>
