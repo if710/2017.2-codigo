@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.ufpe.cin.if710.managers">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".notification.NotificationManagerActivity" />
+        <activity android:name=".notification.NotificationSubActivity" />
+        <activity android:name=".notification.NotificationSubCustomActivity" />
+        <activity android:name=".notification.NotificationCustomActionActivity" />
+        <activity android:name=".alarm.AlarmManagerActivity" />
+        <activity android:name=".alarm.AlarmSimpleActivity" />
+
+        <receiver
+            android:name=".alarm.AlarmLogReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name=".alarm.AlarmNotificationReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".power.PowerManagerActivity" />
+        <activity android:name=".sensor.SensorManagerActivity" />
+        <activity android:name=".power.WakeLockActivity" />
+        <activity android:name=".power.KeepScreenOn1Activity" />
+        <activity android:name=".power.KeepScreenOn2Activity" />
+        <activity android:name=".pkg.PackageManagerActivity" />
+        <activity android:name=".sensor.SensorListActivity" />
+        <activity android:name=".sensor.SensorSingleValueActivity" />
+        <activity android:name=".sensor.SensorXYZActivity" />
+        <activity android:name=".sensor.GestureDetectorActivity" />
+        <activity android:name=".pkg.LauncherActivity" />
+        <activity android:name=".pkg.PrefActivitiesActivity" />
+        <activity android:name=".pkg.PackageManagerQueryActivity" />
+        <activity android:name=".jobscheduler.JobSchedulerActivity" />
+        <activity android:name=".jobscheduler.DownloadViewActivity" />
+
+        <service
+            android:name=".jobscheduler.DownloadJobService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".jobscheduler.DownloadService"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>
