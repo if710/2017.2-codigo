@@ -8,7 +8,9 @@ import android.widget.Button;
 
 import br.ufpe.cin.if710.managers.alarm.AlarmManagerActivity;
 import br.ufpe.cin.if710.managers.jobscheduler.JobSchedulerActivity;
+import br.ufpe.cin.if710.managers.location.LocationMapsActivity;
 import br.ufpe.cin.if710.managers.notification.NotificationManagerActivity;
+import br.ufpe.cin.if710.managers.phonesms.PhoneSmsActivity;
 import br.ufpe.cin.if710.managers.pkg.PackageManagerActivity;
 import br.ufpe.cin.if710.managers.power.PowerManagerActivity;
 import br.ufpe.cin.if710.managers.sensor.SensorManagerActivity;
@@ -67,6 +69,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), PackageManagerActivity.class));
+
+            }
+        });
+        Button b7 = (Button) findViewById(R.id.btn7);
+        b7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), PhoneSmsActivity.class));
+
+            }
+        });
+        Button b8 = (Button) findViewById(R.id.btn8);
+        b8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), LocationMapsActivity.class));
 
             }
         });

@@ -6,6 +6,12 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +19,16 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!--
+             pega valor de uma string definida em arquivo apenas para chaves,
+             chamado apikeys.xml (nao esta no github, por razoes obvias)
+             gere a sua propria e coloque no arquivo ou direto aqui no manifest
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_api_key" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,6 +77,31 @@
             android:name=".jobscheduler.DownloadService"
             android:enabled="true"
             android:exported="true" />
+
+        <activity android:name=".phonesms.PhoneSmsActivity" />
+        <activity android:name=".phonesms.PhoneDialerActivity" />
+        <activity android:name=".phonesms.PhoneCallerActivity" />
+        <activity android:name=".phonesms.PhoneManagerActivity" />
+        <activity android:name=".phonesms.SmsSenderActivity" />
+        <activity android:name=".phonesms.SmsSendDirectActivity" />
+
+        <receiver
+            android:name=".phonesms.SmsReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter android:priority="2">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".phonesms.SmsReceivedActivity" />
+        <activity android:name=".location.LocationMapsActivity" />
+        <activity android:name=".location.ProvidersActivity" />
+        <activity android:name=".location.LocationActivity" />
+        <activity android:name=".location.FusedLocationActivity" />
+        <activity android:name=".location.MapActivity" />
+        <activity android:name=".location.FusedLocationMapActivity"></activity>
     </application>
 
 </manifest>
