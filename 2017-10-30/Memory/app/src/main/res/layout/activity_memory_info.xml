@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Available Memory"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/availableMemory"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="..." />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Low Memory?"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/lowMemory"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="..." />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Threshold"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/threshold"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="..." />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Total Memory"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/totalMemory"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="..."
+        />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Percent Available"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/percentAvailable"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="..." />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Running App Process Info"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/etc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="..." />
+
+</LinearLayout>
